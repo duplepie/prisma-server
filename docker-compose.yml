@@ -1,11 +1,5 @@
 version: '3'
 services:
-  server:
-    build: .
-    ports:
-      - "${SERVER_PORT}:${SERVER_PORT}"
-    command: yarn start
-
   prisma:
     image: prismagraphql/prisma:1.34
     restart: always
@@ -30,5 +24,11 @@ services:
     volumes:
       - mongo:/var/lib/mongo
 
+  server:
+    build: .
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    command: yarn start
+
 volumes:
-  mongo: ~
+  mongo:
