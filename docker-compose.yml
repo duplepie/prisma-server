@@ -1,0 +1,34 @@
+version: '3'
+services:
+  server:
+    build: .
+    ports:
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    command: yarn start
+
+  prisma:
+    image: prismagraphql/prisma:1.34
+    restart: always
+    ports:
+      - "${PRISMA_PORT}:${PRISMA_PORT}"
+    environment:
+      PRISMA_CONFIG: |
+        port: "${PRISMA_PORT}"
+        databases:
+          default:
+            connector: mongo
+            uri: "mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongo"
+
+  mongo:
+    image: mongo:3.6
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGO_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGO_PASSWORD}"
+    ports:
+      - "${MONGO_PORT}:${MONGO_PORT}"
+    volumes:
+      - mongo:/var/lib/mongo
+
+volumes:
+  mongo: ~
