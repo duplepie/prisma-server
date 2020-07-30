@@ -6,7 +6,7 @@ type Query {
 }
 
 type Mutation {
-  addCoin(id: String!, symbol: String!, name: String!): Coin!
+  addCoin(coinId: String!, symbol: String!, name: String!): Coin!
 }
 
 type Coin {

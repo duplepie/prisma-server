@@ -67,8 +67,6 @@ input CoinSubscriptionWhereInput {
   updatedFields_contains_some: [String!]
   node: CoinWhereInput
   AND: [CoinSubscriptionWhereInput!]
-  OR: [CoinSubscriptionWhereInput!]
-  NOT: [CoinSubscriptionWhereInput!]
 }
 
 input CoinUpdateInput {
@@ -141,8 +139,6 @@ input CoinWhereInput {
   symbol_ends_with: String
   symbol_not_ends_with: String
   AND: [CoinWhereInput!]
-  OR: [CoinWhereInput!]
-  NOT: [CoinWhereInput!]
 }
 
 input CoinWhereUniqueInput {

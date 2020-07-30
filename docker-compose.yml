@@ -12,6 +12,7 @@ services:
           default:
             connector: mongo
             uri: "mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongo"
+    command: prisma deploy
 
   mongo:
     image: mongo:3.6
@@ -26,6 +27,8 @@ services:
 
   server:
     build: .
+    environment:
+      PRISMA_ENDPOINT: http://prisma:${PRISMA_PORT}
     ports:
       - "${SERVER_PORT}:${SERVER_PORT}"
     command: yarn start

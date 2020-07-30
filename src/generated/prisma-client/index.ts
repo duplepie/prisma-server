@@ -176,8 +176,6 @@ export interface CoinWhereInput {
   symbol_ends_with?: Maybe<String>;
   symbol_not_ends_with?: Maybe<String>;
   AND?: Maybe<CoinWhereInput[] | CoinWhereInput>;
-  OR?: Maybe<CoinWhereInput[] | CoinWhereInput>;
-  NOT?: Maybe<CoinWhereInput[] | CoinWhereInput>;
 }
 
 export interface CoinCreateInput {
@@ -206,8 +204,6 @@ export interface CoinSubscriptionWhereInput {
   updatedFields_contains_some?: Maybe<String[] | String>;
   node?: Maybe<CoinWhereInput>;
   AND?: Maybe<CoinSubscriptionWhereInput[] | CoinSubscriptionWhereInput>;
-  OR?: Maybe<CoinSubscriptionWhereInput[] | CoinSubscriptionWhereInput>;
-  NOT?: Maybe<CoinSubscriptionWhereInput[] | CoinSubscriptionWhereInput>;
 }
 
 export interface NodeNode {
