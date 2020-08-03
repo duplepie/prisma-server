@@ -1,6 +1,0 @@
-type Coin {
-  id: ID! @id
-  coinId: String! @unique
-  name: String!
-  symbol: String!
-}

@@ -10,7 +10,7 @@ type Mutation {
 }
 
 type Coin {
-  id: ID!
+  id: Int!
   coinId: String!
   name: String!
   symbol: String!

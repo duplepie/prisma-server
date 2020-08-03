@@ -1,17 +1,25 @@
 {
   "name": "server",
+  "license": "ISC",
   "scripts": {
-    "start": "dotenv -- nodemon -e ts,graphql -x ts-node src/index.ts",
-    "build": "rimraf dist && tsc"
+    "start": "dotenv -- ts-node src/index",
+    "build": "yarn generate && rimraf dist && tsc",
+    "seed": "dotenv -- ts-node prisma/seed",
+    "introspect": "dotenv -- prisma introspect",
+    "generate": "graphql-codegen && prisma generate"
   },
   "dependencies": {
+    "@prisma/client": "^2.3.0",
     "graphql-yoga": "^1.18.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^1.17.6",
+    "@graphql-codegen/typescript": "^1.17.6",
+    "@prisma/cli": "^2.3.0",
     "@types/node": "^14.0.27",
+    "@types/ws": "^7.2.6",
     "dotenv-cli": "^3.2.0",
     "nodemon": "^2.0.4",
-    "prisma": "^1.34.10",
     "rimraf": "^3.0.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"

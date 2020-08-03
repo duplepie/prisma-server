@@ -1,9 +1,0 @@
-mutation {
-  coin1: createCoin(data: {
-    coinId: "testCoin",
-    name: "Test",
-    symbol: "tst"
-  }) {
-    id
-  }
-}
