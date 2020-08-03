@@ -20,6 +20,7 @@ export type Coin = {
 export type Mutation = {
   __typename?: 'Mutation';
   addCoin: Coin;
+  syncCoins: Array<Maybe<Coin>>;
 };
 
 
@@ -31,10 +32,9 @@ export type MutationAddCoinArgs = {
 
 export type Query = {
   __typename?: 'Query';
-  coin: Coin;
+  coin?: Maybe<Coin>;
   coins: Array<Coin>;
   searchCoin: Array<Coin>;
-  syncCoins: Array<Coin>;
 };
 
 

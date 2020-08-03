@@ -2,11 +2,11 @@ type Query {
   coin(coinId: String!): Coin
   coins: [Coin!]!
   searchCoin(text: String!): [Coin!]!
-  syncCoins: [Coin!]!
 }
 
 type Mutation {
   addCoin(coinId: String!, symbol: String!, name: String!): Coin!
+  syncCoins: [Coin]!
 }
 
 type Coin {

@@ -8,6 +8,12 @@ export interface Context {
   prisma: PrismaClient
 }
 
+export interface ApiCoin {
+  id: string
+  symbol: string
+  name: string
+}
+
 export const CoinIso = new Iso<CoinDb, Coin>(
   coin => ({
     id: coin.id,

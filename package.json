@@ -12,13 +12,15 @@
     "@prisma/client": "^2.3.0",
     "fp-ts": "^2.7.1",
     "graphql-yoga": "^1.18.3",
-    "monocle-ts": "^2.3.3"
+    "monocle-ts": "^2.3.3",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.6",
     "@graphql-codegen/typescript": "^1.17.6",
     "@prisma/cli": "^2.3.0",
     "@types/node": "^14.0.27",
+    "@types/node-fetch": "^2.5.7",
     "@types/ws": "^7.2.6",
     "dotenv-cli": "^3.2.0",
     "nodemon": "^2.0.4",
