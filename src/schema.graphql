@@ -1,5 +1,5 @@
 type Query {
-  coin(coinId: String!): Coin!
+  coin(coinId: String!): Coin
   coins: [Coin!]!
   searchCoin(text: String!): [Coin!]!
   syncCoins: [Coin!]!

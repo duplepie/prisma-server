@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@prisma/client": "^2.3.0",
-    "graphql-yoga": "^1.18.3"
+    "fp-ts": "^2.7.1",
+    "graphql-yoga": "^1.18.3",
+    "monocle-ts": "^2.3.3"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.6",

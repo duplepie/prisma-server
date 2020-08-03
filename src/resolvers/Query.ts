@@ -1,23 +1,19 @@
-import { Context } from '../utils'
-import { Coin, QuerySearchCoinArgs } from '../types'
+import { CoinIso, Context } from '../utils'
+import { Coin, QueryCoinArgs, QuerySearchCoinArgs } from '../types'
 
 export const Query = {
-  coin(parent: Coin, coinId: string, ctx: Context) {
-    return ctx.prisma.coin.findOne({
+  async coin(parent: Coin, args: QueryCoinArgs, ctx: Context) {
+    const coin = await ctx.prisma.coin.findOne({
       where: {
-        coin_id: coinId
+        coin_id: args.coinId
       }
     })
+    return coin ? CoinIso.get(coin) : coin
   },
 
   async coins(parent: Coin, args: any, ctx: Context): Promise<Coin[]> {
     const coins = await ctx.prisma.coin.findMany()
-    return coins.map(coin => ({
-      id: coin.id,
-      coinId: coin.coin_id,
-      name: coin.name,
-      symbol: coin.symbol
-    } as Coin))
+    return coins.map(CoinIso.get)
   },
 
   async searchCoin(parent: Coin, args: QuerySearchCoinArgs, ctx: Context): Promise<Coin[]> {
@@ -28,12 +24,7 @@ export const Query = {
         }
       }
     })
-    return coins.map(coin => ({
-      id: coin.id,
-      coinId: coin.coin_id,
-      name: coin.name,
-      symbol: coin.symbol
-    } as Coin))
+    return coins.map(CoinIso.get)
   },
 
   syncCoins(parent: Coin, args: any, ctx: Context) {
