@@ -13,7 +13,7 @@
     "fp-ts": "^2.7.1",
     "graphql-yoga": "^1.18.3",
     "monocle-ts": "^2.3.3",
-    "node-fetch": "^2.6.0"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.17.6",
